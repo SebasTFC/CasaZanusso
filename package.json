@@ -1,0 +1,14 @@
+{
+  "name": "casazanusso",
+  "version": "1.0.0",
+  "description": "Application de traiteur italien",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sébastien Escorne",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
