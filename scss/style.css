@@ -1,0 +1,13 @@
+
+
+.dancing-script-menu {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.gradient {
+  background: linear-gradient(to left,
+    red, white,  green);
+}
