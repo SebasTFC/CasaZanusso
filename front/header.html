@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules\bootstrap\dist\css\bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
@@ -11,24 +11,40 @@
     <title>Page de navigation</title>
 </head>
 <body>
-    
-    <div class="container-fluid text-center fixed-top m-3 pt-4 gradient">   
-        <img src="../images/logo_CasaZanusso.png"  style="width: 300px;" alt="Logo entreprise">
-        <nav class="navbar navbar-expand-lg  justify-content-center">
-            <ul class="nav dancing-script-menu ">
-                <li class="nav-item">
-                  <a class="nav-link active text-danger" aria-current="page" href="#">Active</a>
+    <div class="container-fluid text-center sticky-top pt-4 gradient mb-5">   
+        <img src="../images/logo_CasaZanusso.png"  style="width: 350px;" class="rounded-5" alt="Logo entreprise">
+        <nav class="navbar navbar-expand-md justify-content-center">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center flex-column" id="navbarNavDropdown">
+            <ul class="navbar-nav dancing-script-menu">
+              <li class="nav-item px-3">
+                <a class="nav-link active text-danger" href="../front/accueil.php">Accueil</a>
+              </li>
+              <div class="dropdown-center">
+              <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Traiteur</a>
+                <ul class="dropdown-menu text-center px-3" style="font-size: 1.2rem;">
+                  <li><a class="dropdown-item" href="#">Evènements</a></li>
+                  <li><a class="dropdown-item" href="../front/chef_domicile.php">Chef à domicile</a></li>
+                  <li><a class="dropdown-item" href="#">Demande de devis</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-center">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Epicerie italienne</a>
+                  <ul class="dropdown-menu text-center px-3" style="font-size: 1.2rem;">
+                    <li><a class="dropdown-item" href="#">Nos plats</a></li>
+                    <li><a class="dropdown-item" href="#">Nos desserts</a></li>
+                  </ul>
+                </div>
+                <li class="nav-item px-3">
+                  <a class="nav-link text-black" href="#">Les marchés</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <li class="nav-item px-3"></li>
+                  <a class="nav-link text-success" href="../front/contact.php">Contact</a>
                 </li>
             </ul>
+            </div>
         </nav>
     </div>
    

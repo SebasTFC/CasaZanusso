@@ -9,5 +9,42 @@
 
 .gradient {
   background: linear-gradient(to left,
-    red, white,  green);
+    green, white,  red);
+}
+
+.footer {
+  position:absolute;
+  left: 0;
+  bottom:end;
+  width: 100%;
+}
+
+.tourne {
+  transform: rotate(-2deg); 
+}
+
+.tourne_positif {
+  transform: rotate(2deg); 
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-center {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body{
+  background-color:black;
+}
+
+.couleur_form{
+  background-color:rgb(230, 243, 226) ;
 }
