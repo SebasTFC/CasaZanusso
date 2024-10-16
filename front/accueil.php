@@ -1,7 +1,19 @@
 <!-- début de l'application -->
 <?php
-include("../front/header.html");
+session_start();
+include_once("../front/header.html");
 ?>
+<?php 
+ if ($_SESSION['nb']!=0){
+    ?>
+        <div class="alert alert-warning alert-dismissible fade show m-5" role="alert">
+            <strong>Vous ètes notre <?php echo $_SESSION['nb'] ?>ème visiteur. Bonne consultation !!!</strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <?php
+        $_SESSION['nb']=0;
+ };
+ ?>
 
 <div class="container-fluid">
     <div class="mb-5 text-center">
@@ -42,7 +54,7 @@ include("../front/header.html");
                     <p class="card-text">N'hesitez pas à nous contacter.</p>
                 </div>
                 <a href="../front/chef_domicile.php" class="card-link btn btn-outline-warning rounded-0 mt-2">Chef à domicile</a>
-                <a href="#" class="card-link btn btn-outline-warning rounded-0 mt-2">Devis</a>
+                <a href="../front/devis.php" class="card-link btn btn-outline-warning rounded-0 mt-2">Devis</a>
             </div>
         </div>
     </div>
@@ -96,5 +108,5 @@ include("../front/header.html");
 
 <!-- fin de l'application -->
 <?php
-include("../front/footer.html");
+include_once("../front/footer.html");
 ?>
