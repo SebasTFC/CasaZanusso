@@ -2,7 +2,7 @@
   "name": "casazanusso",
   "version": "1.0.0",
   "description": "Application de traiteur italien",
-  "main": "index.js",
+  "main": "index.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
