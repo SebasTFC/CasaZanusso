@@ -6,9 +6,9 @@ $mydata = json_decode($data, true);
 $id = $mydata['sid'];
 
 if(!empty($id)){
-    $sql = "DELETE FROM plats WHERE id_plat = {$id}";
+    $sql = "DELETE FROM marches WHERE id_marche = {$id}";
     if($bd->query($sql) == TRUE){
-        echo "La formule a été supprimée";
+        echo "Le marché a été supprimé";
     }else{
         echo "Erreur de suppression!";
     }  

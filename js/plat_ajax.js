@@ -4,7 +4,7 @@ $(document).ready(function (){
       let nom_plat = document.getElementById('nom_plat').value;
       
       if(nom_plat.length == 0){
-          nomError.innerHTML="Le nom du plat est requis";
+          nomError.innerHTML="Le nom de la formule est requis";
           return true;
       } else {
           nomError.innerHTML="";
@@ -28,7 +28,7 @@ $(document).ready(function (){
                       x="";
                   }
                   for(i=0;i<x.length;i++){
-                      output += "<tr><td>"+ x[i].nom_plat+ "</td><td style='text-align:center;'><img style='width:100px;' src='/images/" +x[i].image_plat+"'></td><td>"+x[i].description_plat+"</td><td>"+x[i].detail_plat+"</td><td style='text-align:center;'>"+x[i].prix_plat+"</td><td style='text-align:center;'>"+x[i].nb_pers_plat+"</td><td>"+"<button class='border-1 border-success btn-edit'data-sid=" +x[i].id_plat + "><i class='bi bi-pencil-square'></i></button>  <button class='btn-del border-1 border-warning'data-sid=" +x[i].id_plat +"><i class='bi bi-trash'></i></button></td></tr>";
+                      output += "<tr><td>"+ x[i].nom_plat+"</td><td>"+ x[i].nom_sorte+ "</td><td style='text-align:center;'><img style='width:100px;' src='/images/" +x[i].image_plat+"'></td><td>"+x[i].description_plat+"</td><td>"+x[i].detail_plat+"</td><td style='text-align:center;'>"+x[i].prix_plat+"</td><td style='text-align:center;'>"+x[i].nb_pers_plat+"</td><td>"+"<button class='border-1 border-success btn-edit'data-sid=" +x[i].id_plat + "><i class='bi bi-pencil-square'></i></button>  <button class='btn-del border-1 border-warning'data-sid=" +x[i].id_plat +"><i class='bi bi-trash'></i></button></td></tr>";
                       $("#tbody").html(output);
                   }
                   
@@ -104,12 +104,13 @@ $(document).ready(function (){
               success:function(data){
                 
                   $("#id_plat").val(data.id_plat);
-                  $("#nom_plat").val(data.nom_plat);
-                  $("#image_plat").attr('image_plat[0]');
+                  $("#nom_plat").val(data.nom_plat);     
+                  //$("#image_plat").attr(data.image_plat.files[0]);
                   $("#description_plat").val(data.description_plat);
                   $("#prix_plat").val(data.prix_plat);
                   $("#detail_plat").val(data.detail_plat);
-                  $("#pers_min_plat").val(data.nb_pers_plat);      
+                  $("#pers_min_plat").val(data.nb_pers_plat);
+                  $("#sorte").val(data.id_sorte);      
               }
           })
       });

@@ -1,18 +1,7 @@
 <?php
 session_start();
 include_once('../front/header.html');
-$password = getenv("PSWD");
- $username = 'root';
- $database = 'casazanusso';
- $hostname = 'localhost';
-
- try {
-  $bd = new PDO("mysql:host=$hostname;dbname=$database",$username,$password);
-  $bd ->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
- 
-  }catch (Exception $e){
-      echo "Erreur de connexion.Base de donnée pas trouvée.".$e->getMessage();
-  }
+include("../front/connect_mysql.php");
 ?>
 <div class="container-fluid">
     <div class="mb-5 text-center">
@@ -23,13 +12,13 @@ $password = getenv("PSWD");
     </div>
 
     <?php
-        $recupPlats = $bd->query("SELECT * FROM plats");
+        $recupPlats = $bd->query("SELECT * FROM plats WHERE id_sorteplat= 1");
         while($plat = $recupPlats->fetch()){
             
             ?>
                 <div class="row mt-3 justify-content-center">
                     <div class="col-12 col-lg-6">
-                        <a href="#myModal"  data-bs-toggle="modal" data-bs-target="#myModal<?php echo $plat['id_plat']?>">
+                        <a href="#myModal"  class="text-white fs-5" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $plat['id_plat']?>">
                         <?php echo $plat['nom_plat'] ?></a>
                     </div>
                 </div>

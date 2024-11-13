@@ -1,8 +1,6 @@
 
 <?php
-
 require __dir__.'../../vendor/autoload.php'; // Include the MongoDB PHP driver
-
   // Ouverture de la connexion (localhost par défaut)
   if(getenv('MONGODB_URI') !== false) {
   $mongo = new MongoDB\Client(getenv("MONGODB_URI"));}
@@ -12,7 +10,6 @@ require __dir__.'../../vendor/autoload.php'; // Include the MongoDB PHP driver
   // Selection de la database "db"
   $db = $mongo->selectDatabase("db");
 
-  // Selection de la collection "CompteAnimaux"
-  $Compteur_connection = $db->conte;
- echo"ok";
+  // Selection de la collection "CompteVisiteur"
+  $Compteur_connection = $db->CompteVisiteur;
 ?>

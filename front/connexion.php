@@ -1,12 +1,12 @@
 <?php
 session_start();
 include_once('../front/header.html');
-//include('connexion.php');
+include_once('../front/connect_mysql.php');
 $message="";
 
 try{    
-    $bd = new PDO('mysql:host=localhost;dbname=casazanusso;charset=utf8;','root','');
-    $bd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    //$bd = new PDO('mysql:host=localhost;dbname=casazanusso;charset=utf8;','root','');
+    //$bd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     if(isset($_POST["btn-connection"])){
         if(!empty($_POST['email']) AND !empty($_POST['password'])){
             //$token = bin2hex(random_bytes(32));
@@ -17,7 +17,9 @@ try{
             if($recupUser->rowcount()>0){ 
                 $_SESSION['email']= $pseudo;
                 $_SESSION['password']=$mdp;
-                header("Location:../admin/header_admin.php");
+                echo "<script>window.location.href='../admin/fond_admin.php';</script>";
+                exit;
+                //header("Location: ../admin/fond_admin.php");
                 }else{
                 $message= "Mail ou de Mot de passe incorrect...";}
         }else{

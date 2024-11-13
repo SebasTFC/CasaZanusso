@@ -1,0 +1,39 @@
+#version: '3.9'
+services:
+    php:
+      image: php:8.2-apache
+      container_name: php82
+      ports:
+        - "8001:80"
+      volumes:
+        - ./:/var/www/html
+      build:
+        context: ./
+        dockerfile: Dockerfile
+    db:
+      image: mysql:8.0
+      container_name: mysql80
+      command: --default-authentication-plugin=mysql_native_password
+      environment:
+        MYSQL_ROOT_PASSWORD: pass
+        MYSQL_DATABASE: casazanusso
+        MYSQL_USER: test
+        MYSQL_PASSWORD: pass
+      ports:
+        - "3306:3306"
+    phpma:
+      image: phpmyadmin
+      container_name: phpmyadmin
+      environment:
+        PMA_ARBITRARY: 1
+        PMA_HOST: db
+        PMA_USER: root
+        PMA_PASSWORD: pass
+        PMA_PORT: 3306   
+      ports:
+        - "8888:80"
+    
+
+
+
+ 

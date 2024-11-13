@@ -1,9 +1,7 @@
 <?php
 include("../front/connect_mysql.php");
 
-$sql = "SELECT id_plat,nom_plat,image_plat,description_plat,detail_plat,prix_plat,nb_pers_plat,id_sorteplat,nom_sorte FROM `plats`
-INNER JOIN `sorte`
-WHERE id_sorteplat = id_sorte"; 
+$sql = "SELECT id_marche,ville_marche,adresse_marche,jour_marche,frequence_marche,date_marche,evenement_marche FROM marches"; 
 
 $result = $bd -> query($sql);
 if($result->rowCount() > 0){

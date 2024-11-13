@@ -1,7 +1,7 @@
 
 <?php
-
 include_once('../front/header.html');
+include_once('../front/connect_mysql.php');
 require_once ('../vendor/autoload.php');
 
 $reponse="";
@@ -104,15 +104,22 @@ if(isset($_POST['mail'])){
                 <div class="border border-black rounded-2 p-2">
                 <p class="text-center text-decoration-underline">Choix des plats avec le nombre de personnes:</p>
                 <div class="row justify-content-between text-start mt-4">
-                    <div class="col-8">
+
+                <div class="col-8">
                     <label for="plat" class="form-label">Choix 1:</label>
-                        <select class="form-select border-black mb-2" name="plat">
-                            <option value="Aucun">Aucun</option>
-                            <option value="Canneloni">Canneloni</option>
-                            <option value="Cochon grillé">Cochon grillé</option>
-                            <option value="Autre">Autre(à préciser)</option>
-                        </select>
-                    </div>
+                    <select class="form-select border-black mb-2" name="plat">
+                    <option value="Aucun" >Aucun</option>
+                        <?php
+                        $recupPlat = $bd->query('SELECT * FROM plats');
+                        while($plat = $recupPlat->fetch()){
+                        ?>
+                        <option  value="<?= $plat['nom_plat'] ?>"><?= $plat['nom_plat']?></option>
+                        <?php 
+                        }
+                        ?>
+                        <option value="Autre">Autre (à préciser)</option>
+                </select>
+            </div>
                     <div class="col-4">
                         <label for="nb_plat" class="form-label">Nb:</label>
                         <input type="number" class="form-control border-black mb-2" name="nb_plat" min="0" value="0">
@@ -122,10 +129,16 @@ if(isset($_POST['mail'])){
                     <div class="col-8">
                         <label for="plat_2" class="form-label">Choix 2:</label>
                         <select class="form-select border-black mb-2" name="plat_2">
-                            <option value="Aucun">Aucun</option>
-                            <option value="Canneloni">Canneloni</option>
-                            <option value="Cochon grillé">Cochon grillé</option>
-                            <option value="Autre">Autre(à préciser)</option>
+                             <option value="Aucun" >Aucun</option>
+                                <?php
+                                $recupPlat = $bd->query('SELECT * FROM plats');
+                                while($plat = $recupPlat->fetch()){
+                                ?>
+                                <option  value="<?= $plat['nom_plat'] ?>"><?= $plat['nom_plat']?></option>
+                                <?php 
+                                }
+                                ?>
+                                <option value="Autre">Autre (à préciser)</option>
                         </select>
                     </div>
                     <div class="col-4">
@@ -136,12 +149,18 @@ if(isset($_POST['mail'])){
                 <div class="row justify-content-between text-start mt-4">
                     <div class="col-8">
                     <label for="plat_3" class="form-label">Choix 3:</label>
-                        <select class="form-select border-black mb-2" name="plat_3">
-                            <option value="Aucun">Aucun</option>
-                            <option value="Canneloni">Canneloni</option>
-                            <option value="Cochon grillé">Cochon grillé</option>
-                            <option value="Autres">Autres(à préciser)</option>
-                        </select>
+                    <select class="form-select border-black mb-2" name="plat_3">
+                        <option value="Aucun" >Aucun</option>
+                        <?php
+                        $recupPlat = $bd->query('SELECT * FROM plats');
+                        while($plat = $recupPlat->fetch()){
+                        ?>
+                        <option  value="<?= $plat['nom_plat'] ?>"><?= $plat['nom_plat']?></option>
+                        <?php 
+                        }
+                        ?>
+                        <option value="Autre">Autre (à préciser)</option>
+                </select>
                     </div>
                     <div class="col-4">
                     <label for="nb_plat_3" class="form-label">Nb:</label>
@@ -154,12 +173,18 @@ if(isset($_POST['mail'])){
                 <div class="row justify-content-between text-start mt-4">
                     <div class="col-8">
                     <label for="dessert" class="form-label">Choix 1:</label>
-                        <select class="form-select border-black mb-2" name="dessert">
-                            <option value="Aucun">Aucun</option>
-                            <option value="Tiramisu">Tiramisu</option>
-                            <option value="Pannacota">Pannacota</option>
-                            <option value="Autres">Autres (à préciser)</option>
-                        </select>
+                    <select class="form-select border-black mb-2" name="dessert">
+                        <option value="Aucun" >Aucun</option>
+                            <?php
+                            $recupDessert = $bd->query('SELECT * FROM desserts');
+                            while($dessert = $recupDessert->fetch()){
+                            ?>
+                            <option  value="<?= $dessert['nom_dessert'] ?>"><?= $dessert['nom_dessert']?></option>
+                            <?php 
+                            }
+                            ?>
+                        <option value="Autre">Autre (à préciser)</option>
+                    </select>
                     </div>
 
                     <div class="col-4">
@@ -170,12 +195,18 @@ if(isset($_POST['mail'])){
                 <div class="row justify-content-between text-start mt-4">
                     <div class="col-8">
                     <label for="dessert_2" class="form-label">Choix 2:</label>
-                        <select class="form-select border-black mb-2" name="dessert_2">
-                            <option value="Aucun">Aucun</option>
-                            <option value="Tiramisu">Tiramisu</option>
-                            <option value="Pannacota">Pannacota</option>
-                            <option value="Autres">Autres (à préciser)</option>
-                        </select>
+                    <select class="form-select border-black mb-2" name="dessert_2">
+                        <option value="Aucun" >Aucun</option>
+                            <?php
+                            $recupDessert = $bd->query('SELECT * FROM desserts');
+                            while($dessert = $recupDessert->fetch()){
+                            ?>
+                            <option  value="<?= $dessert['nom_dessert'] ?>"><?= $dessert['nom_dessert']?></option>
+                            <?php 
+                            }
+                            ?>
+                        <option value="Autre">Autre (à préciser)</option>
+                    </select>
                     </div>
                     <div class="col-4">
                     <label for="nb_dessert_2" class="form-label">Nb:</label>
@@ -185,12 +216,18 @@ if(isset($_POST['mail'])){
                 <div class="row justify-content-between text-start mt-4">
                     <div class="col-8">
                     <label for="dessert_3" class="form-label">Choix 3:</label>
-                        <select class="form-select border-black mb-2" name="dessert_3">
-                            <option value="Aucun">Aucun</option>
-                            <option value="Tiramisu">Tiramisu</option>
-                            <option value="Pannacota">Pannacota</option>
-                            <option value="Autres">Autres (à préciser)</option>
-                        </select>
+                    <select class="form-select border-black mb-2" name="dessert_3">
+                        <option value="Aucun" >Aucun</option>
+                            <?php
+                            $recupDessert = $bd->query('SELECT * FROM desserts');
+                            while($dessert = $recupDessert->fetch()){
+                            ?>
+                            <option  value="<?= $dessert['nom_dessert'] ?>"><?= $dessert['nom_dessert']?></option>
+                            <?php 
+                            }
+                            ?>
+                        <option value="Autre">Autre (à préciser)</option>
+                    </select>
                     </div>
 
                     <div class="col-4">

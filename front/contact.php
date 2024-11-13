@@ -1,6 +1,6 @@
 
 <?php
-
+session_start();
 include_once('../front/header.html');
 require_once ('../vendor/autoload.php');
 

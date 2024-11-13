@@ -30,13 +30,10 @@ if((!$_SESSION['email'])=='alexzanusso@admin.fr' AND (!$_SESSION['password']== g
           <div class="collapse navbar-collapse justify-content-center flex-column" id="navbarNavDropdown">
             <ul class="navbar-nav dancing-script-menu">
                 <li class="nav-item px-3">
-                  <a class="nav-link active text-success" href="../admin/plats.php">Les plats</a>
+                  <a class="nav-link active text-success" href="../admin/plats.php">Les formules</a>
                 </li>
                 <li class="nav-item px-3">
-                  <a class="nav-link active text-black" href="../admin/desserts.php">Les desserts</a>
-                </li>
-                <li class="nav-item px-3">
-                  <a class="nav-link text-black" href="../admin/marches">Les marchés</a>
+                  <a class="nav-link text-black" href="../admin/marches.php">Les marchés</a>
                 </li>
                 <li class="nav-item px-3"></li>
                   <a class="nav-link text-danger" href="../admin/logout.php">Deconnexion</a>
@@ -44,6 +41,8 @@ if((!$_SESSION['email'])=='alexzanusso@admin.fr' AND (!$_SESSION['password']== g
             </ul>
             </div>
         </nav>
+        
     </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
     <script src="../node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
