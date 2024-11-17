@@ -20,7 +20,7 @@ if(getenv('JAWSDB_URL') !== false) {
  $hostname = 'localhost';
 }
  try {
-  $bd = new PDO("mysql:host=$hostname;dbname=$database",$username,$password);
+  $bd = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8",$username,$password);
   $bd ->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
   }catch (Exception $e){

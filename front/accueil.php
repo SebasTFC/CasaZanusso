@@ -55,7 +55,7 @@ if (isset($_GET['nb'])) {
             <div class="card-body">
                 <div class="dancing-script-menu" style="font-size: 1.2rem; color:black;">
                     <p class="card-text">Vous organisez un séminaire, une fête de famille, un èvenement particulier ?</p>
-                    <p class="card-text">Besoin d'un chef à domicile pour épater famille ou amis?</p>
+                    <p class="card-text">Besoin d'un chef à domicile pour épater famille ou amis?<br>Se perfectionner dans la manière de cuisiner?</p>
                     <p class="card-text">N'hesitez pas à nous contacter.</p>
                 </div>
                 <a href="../front/chef_domicile.php" class="card-link btn btn-outline-warning rounded-0 mt-2">Chef à domicile</a>

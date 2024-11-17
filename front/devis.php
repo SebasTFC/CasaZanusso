@@ -110,7 +110,7 @@ if(isset($_POST['mail'])){
                     <select class="form-select border-black mb-2" name="plat">
                     <option value="Aucun" >Aucun</option>
                         <?php
-                        $recupPlat = $bd->query('SELECT * FROM plats');
+                        $recupPlat = $bd->query('SELECT * FROM plats where id_sorteplat=1');
                         while($plat = $recupPlat->fetch()){
                         ?>
                         <option  value="<?= $plat['nom_plat'] ?>"><?= $plat['nom_plat']?></option>
@@ -131,7 +131,7 @@ if(isset($_POST['mail'])){
                         <select class="form-select border-black mb-2" name="plat_2">
                              <option value="Aucun" >Aucun</option>
                                 <?php
-                                $recupPlat = $bd->query('SELECT * FROM plats');
+                                $recupPlat = $bd->query('SELECT * FROM plats where id_sorteplat=1');
                                 while($plat = $recupPlat->fetch()){
                                 ?>
                                 <option  value="<?= $plat['nom_plat'] ?>"><?= $plat['nom_plat']?></option>
@@ -152,7 +152,7 @@ if(isset($_POST['mail'])){
                     <select class="form-select border-black mb-2" name="plat_3">
                         <option value="Aucun" >Aucun</option>
                         <?php
-                        $recupPlat = $bd->query('SELECT * FROM plats');
+                        $recupPlat = $bd->query('SELECT * FROM plats where id_sorteplat=1');
                         while($plat = $recupPlat->fetch()){
                         ?>
                         <option  value="<?= $plat['nom_plat'] ?>"><?= $plat['nom_plat']?></option>
@@ -176,10 +176,10 @@ if(isset($_POST['mail'])){
                     <select class="form-select border-black mb-2" name="dessert">
                         <option value="Aucun" >Aucun</option>
                             <?php
-                            $recupDessert = $bd->query('SELECT * FROM desserts');
+                            $recupDessert = $bd->query('SELECT * FROM plats where id_sorteplat=2');
                             while($dessert = $recupDessert->fetch()){
                             ?>
-                            <option  value="<?= $dessert['nom_dessert'] ?>"><?= $dessert['nom_dessert']?></option>
+                            <option  value="<?= $dessert['nom_plat'] ?>"><?= $dessert['nom_plat']?></option>
                             <?php 
                             }
                             ?>
@@ -198,10 +198,10 @@ if(isset($_POST['mail'])){
                     <select class="form-select border-black mb-2" name="dessert_2">
                         <option value="Aucun" >Aucun</option>
                             <?php
-                            $recupDessert = $bd->query('SELECT * FROM desserts');
+                            $recupDessert = $bd->query('SELECT * FROM plats where id_sorteplat=2');
                             while($dessert = $recupDessert->fetch()){
                             ?>
-                            <option  value="<?= $dessert['nom_dessert'] ?>"><?= $dessert['nom_dessert']?></option>
+                            <option  value="<?= $dessert['nom_plat'] ?>"><?= $dessert['nom_plat']?></option>
                             <?php 
                             }
                             ?>
@@ -219,10 +219,10 @@ if(isset($_POST['mail'])){
                     <select class="form-select border-black mb-2" name="dessert_3">
                         <option value="Aucun" >Aucun</option>
                             <?php
-                            $recupDessert = $bd->query('SELECT * FROM desserts');
+                            $recupDessert = $bd->query('SELECT * FROM plats where id_sorteplat=2');
                             while($dessert = $recupDessert->fetch()){
                             ?>
-                            <option  value="<?= $dessert['nom_dessert'] ?>"><?= $dessert['nom_dessert']?></option>
+                            <option  value="<?= $dessert['nom_plat'] ?>"><?= $dessert['nom_plat']?></option>
                             <?php 
                             }
                             ?>

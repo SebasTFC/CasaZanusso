@@ -11,9 +11,8 @@ include_once('../front/header.html');
             <img src="../images/domicile.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
                 <div class="dancing-script-menu p-3" style="font-size: 1.3rem; color:black;">
-                    <p class="card-text">Envie de recevoir sans devoir galérer derrière les fourneaux. Restez à côté des vos convives, je m’occuperai du reste!</p>
-                    <p class="card-text">Partez en Italie, tout en restant chez vous et découvrez les goûts et les saveurs de la « Dolce Vita » : bruschette, tagliatelle, ravioli, risotti, tiramisù ou pannecotte… Tous mes plats sont créés à partir de recettes de la tradition italienne élaborée en fonction des vos envies et d’une sélection de produits de qualité locaux et de saison.  
-                    </p>
+                    <p class="card-text">Envie de recevoir des convives sans devoir galérer derrière les fourneaux.<br>Restez à côté de vos proches, je m’occuperai du reste! </p>
+                    <p class="card-text">Partez en Italie, tout en restant chez vous et découvrez les goûts et les saveurs de la « Dolce Vita ».</p>
                     <p class="card-text">Contactez- moi pour un devis personnalisé !</p>
                 </div>
                 <a href="../front/accueil.php" class="card-link btn btn-outline-warning rounded-0 mt-2">Retour</a>
@@ -27,9 +26,8 @@ include_once('../front/header.html');
             <img src="../images/cours_cuisine.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
                 <div class="dancing-script-menu p-3" style="font-size: 1.3rem; color:black;">
-                    <p class="card-text">Envie de recevoir sans devoir galérer derrière les fourneaux. Restez à côté des vos convives, je m’occuperai du reste!</p>
-                    <p class="card-text">Partez en Italie, tout en restant chez vous et découvrez les goûts et les saveurs de la « Dolce Vita » : bruschette, tagliatelle, ravioli, risotti, tiramisù ou pannecotte… Tous mes plats sont créés à partir de recettes de la tradition italiennes élaborées en fonction des vos envies et d’une sélection de produits de qualité locaux et de saison. Menu toujours personnalisé en fonction de vos envies et exigences, servi directement chez vous ou où vous le souhaitez. 
-                    </p>
+                    <p class="card-text">Envie de perfectionner votre façon de cuisiner, seul ou en groupe, l'atelier de cuisine est fait pour vous.</p>
+                    <p class="card-text">Personnalisez vos menus en fonction de vos envies et exigences.</p>
                     <p class="card-text">Contactez- moi pour un devis personnalisé !</p>
                 </div>
                 <a href="../front/accueil.php" class="card-link btn btn-outline-warning rounded-0 mt-2">Retour</a>

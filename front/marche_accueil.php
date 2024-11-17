@@ -63,7 +63,7 @@ include("../front/connect_mysql.php");
         <tr>
             <td><?php echo $marche['ville_marche'] ?></td>
             <td><?php echo $marche['adresse_marche'] ?></td>
-            <td><?php echo $marche['date_marche'] ?></td>
+            <td><?php echo date("d M Y", strtotime($marche['date_marche'])) ?></td>
             <td><?php echo $marche['evenement_marche'] ?></td>
         </tr>
  
