@@ -60,7 +60,8 @@ INSERT INTO marches (id_marche, ville_marche, adresse_marche, jour_marche, frequ
 CREATE TABLE users (
   id_user int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   mail text NOT NULL,
-  password text NOT NULL
+  password text NOT NULL,
+  token text 
 );
 
 INSERT INTO users (id_user, mail, password,token) VALUES
