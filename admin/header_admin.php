@@ -1,9 +1,16 @@
 <?php 
-session_start();
+/*session_start();
 require_once ('../vendor/autoload.php');
-if((!$_SESSION['email'])=='alexzanusso@admin.fr' AND (!$_SESSION['password']== getenv('PASSWORD_SQL'))){
+if((!$_SESSION['email']) AND (!$_SESSION['password'])){
     header('location: ../front/connexion.php');
-}
+}*/
+$email = $_COOKIE['email'];
+$token = $_COOKIE['token'];
+include_once('../front/connect_mysql.php');
+$recupUser = $bd->prepare('SELECT * FROM users WHERE mail = ? AND token = ?');
+$recupUser->execute(array($email,$token));
+$data = $recupUser->fetch(PDO::FETCH_ASSOC);
+if($data['mail'] != false){
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +42,9 @@ if((!$_SESSION['email'])=='alexzanusso@admin.fr' AND (!$_SESSION['password']== g
                 <li class="nav-item px-3">
                   <a class="nav-link text-black" href="../admin/marches.php">Les marchés</a>
                 </li>
+                <li class="nav-item px-3">
+                  <a class="nav-link text-black" href="../admin/utilisateurs.php">Les utilisateurs</a>
+                </li>
                 <li class="nav-item px-3"></li>
                   <a class="nav-link text-danger" href="../admin/logout.php">Deconnexion</a>
                 </li>
@@ -46,3 +56,8 @@ if((!$_SESSION['email'])=='alexzanusso@admin.fr' AND (!$_SESSION['password']== g
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
     <script src="../node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+  <?php
+  }else{
+    header('location: ../admin/connexion.php');
+  }
+  ?>

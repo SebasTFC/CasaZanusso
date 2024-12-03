@@ -34,8 +34,14 @@ include("../front/connect_mysql.php");
                                     }
                                 }else{
                                         $sql = $bd->prepare("INSERT INTO plats(nom_plat,image_plat,description_plat,detail_plat,prix_plat,nb_pers_plat,id_sorteplat) VALUES (?,?,?,?,?,?,?)");
-                                        $sql->execute(array($nom,$target,$description,$detail,$prix,$nb_pers_plat,$sorte));
-                                    
+                                        $sql->bindParam(1, $nom);
+                                        $sql->bindParam(2, $target);
+                                        $sql->bindParam(3, $description);
+                                        $sql->bindParam(4, $detail);
+                                        $sql->bindParam(5, $prix);
+                                        $sql->bindParam(6, $nb_pers_plat);
+                                        $sql->bindParam(7, $sorte);
+                                        $sql->execute();
                                         if($sql == TRUE){
                                             echo "Formule enregistrée !";
                                         }else{
