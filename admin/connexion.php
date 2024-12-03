@@ -19,9 +19,9 @@ try{
             $data = $recupUser->fetch(PDO::FETCH_ASSOC);
                 if($recupUser->rowcount()<1){ 
                     $message= "L'E-mail n'existe pas...";}
-                else{
-                    if(!password_verify($mdp,$data['password'])){
-                        $message= "Mot de passe incorrect...";}
+                //else{
+                    //if(!password_verify($mdp,$data['password'])){
+                        //$message= "Mot de passe incorrect...";}
                     else{
                         //MISE A JOUR DU TOKEN DANS LA BASE DE DONNEE
                         $bd->exec("UPDATE users set token = '$token' WHERE mail = '$pseudo'");
@@ -34,7 +34,7 @@ try{
                 }
             }
         }
-    }
+    //}
 catch(PDOException $e){
     echo "Erreur:".$e->getMessage();
     }   
