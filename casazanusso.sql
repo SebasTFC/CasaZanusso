@@ -61,7 +61,7 @@ CREATE TABLE users (
   id_user int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   mail text NOT NULL,
   password text NOT NULL,
-  token text 
+  token text DEFAULT NULL
 );
 
 INSERT INTO users (id_user, mail, password,token) VALUES
