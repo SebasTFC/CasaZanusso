@@ -103,7 +103,7 @@ if (isset($_GET['nb'])) {
                     <div class="dancing-script-menu" style="font-size: 1.2rem; color:black;">
                         <p class="card-text">Amoureux de la cuisine et en particulier Italienne, j'ai toujours voulu lier le côté professionnel au côté plaisir en voulant faire découvrir la saveur culinaire d'une grande gastronomie.</p>
                     </div>
-                    <a href="#" class="card-link btn btn-outline-warning rounded-0 mt-2">Historique</a>
+                    <a href="../front/historique.php" class="card-link btn btn-outline-warning rounded-0 mt-2">Historique</a>
                 </div>
             </div>
         </div>

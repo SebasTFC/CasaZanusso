@@ -50,19 +50,19 @@ if(isset($_POST['mail'])){
     $phpmailer->isHTML(true);
     // Message
     $phpmailer->FromName = $from;
-    $phpmailer->Subject = $subject;
-    $phpmailer->Body    = '<b>Un devis est arrivé</b></br>'
-        .'Projet: '.$subject.'</br>'
+    $phpmailer->Subject = 'Nouvelle demande de devis';
+    $phpmailer->Body    = 
+        'Nature du Projet: '.$subject.'</br>'
         .'Date: '.$date.'</br>'
         .'Nb de personne au total: '.$nb_total.'</br>'
-        .'Plat1: '.$plat.' pour '.$nb_plat.' personnes </br>'
-        .'Plat2: '.$plat_2.' pour '.$nb_plat_2.' personnes </br>'
-        .'Plat3: '.$plat_3.' pour '.$nb_plat_3.' personnes </br>'
-        .'Dessert1: '.$dessert.' pour '.$nb_dessert.' personnes </br>'
-        .'Dessert2: '.$dessert_2.' pour '.$nb_dessert_2.' personnes </br>'
-        .'Dessert3: '.$dessert_3.' pour '.$nb_dessert_3.' personnes </br>'
+        .'Choix du 1er plat: '.$plat.' pour '.$nb_plat.' personnes </br>'
+        .'Choix du 2ème plat: '.$plat_2.' pour '.$nb_plat_2.' personnes </br>'
+        .'Choix du 3ème plat: '.$plat_3.' pour '.$nb_plat_3.' personnes </br>'
+        .'Choix du 1er dessert: '.$dessert.' pour '.$nb_dessert.' personnes </br>'
+        .'Choix du 2ème dessert: '.$dessert_2.' pour '.$nb_dessert_2.' personnes </br>'
+        .'Choix du 3ème dessert: '.$dessert_3.' pour '.$nb_dessert_3.' personnes </br>'
         .'Precision: '.$content.'</br>'
-        .'Adresse mail du client: '.$from;
+        .'Adresse e-mail du client: '.$from;
     
   
     
@@ -85,7 +85,8 @@ if(isset($_POST['mail'])){
     <div class="container">
     <div class="row justify-content-center mb-5">
         <div class="col-10 col-lg-6 couleur_form rounded-3 px-5 py-2 fw-bold">
-            <h1 class="text-center p-3 text-decoration-underline">Devis</h1>
+            <h1 class="text-center p-3 text-decoration-underline">Demande de Devis</h1>
+            <div style="font-size: 1.1rem;color:red;" class='text-center mt-2'><?= $reponse ?> </div>
 
                 <label for="subject" class="form-label">Type de projet:</label>
                     <select class="form-select border-black mb-2" name="subject">
@@ -251,7 +252,7 @@ if(isset($_POST['mail'])){
                         <a class="btn btn-outline-warning rounded-0" href="../front/accueil.php">Retour</a>
                     </div>
                 </div>
-                <div style='color:red' class='text-center mt-2'><?= $reponse ?> </div>
+                
         </div>        
     </div>
     </div>
